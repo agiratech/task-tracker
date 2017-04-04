@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: task_tracker_development
+
+test:
+  <<: *default
+  database: task_tracker_test
+
+production:
+  <<: *default
+  database: task_tracker_production

@@ -1,0 +1,11 @@
+<link rel="stylesheet" type="text/css" href="css/login.css">
+<div class="login">
+  <h2 class="login-header">Employee Login</h2>
+  <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}" class="login-container" >
+    <p><input type="email" placeholder="Email" ng-model="loginForm.email" required></p>
+    <p><input type="password" placeholder="Password" ng-model="loginForm.password" required></p>
+    <p><input type="checkbox"><span  class="remember">Remember me</span></p>
+    <p class="forgot" ng-click="forgotPassword()">Forgot Password</p>
+    <p><input type="submit" value="Log in"></p>
+  </form>
+</div> 

@@ -42,13 +42,13 @@ body {
 }
 
 /* The triangle form is achieved by a CSS hack */
-.login-triangle {
+/*.login-triangle {
   width: 0;
   margin-right: auto;
   margin-left: auto;
   border: 12px solid transparent;
   border-bottom-color: #28d;
-}
+}*/
 
 .login-header {
 
@@ -121,5 +121,5 @@ span.remember{
 p.forgot{
   cursor: pointer;
   margin-top: -45px;
-  margin-left: 200px
+  margin-left: 200px;
 }

@@ -19,7 +19,6 @@
       $location.path('/sample');
     });
 
-<<<<<<< HEAD
     $scope.forgotPassword = function(){
       $location.path('/forgotpassword')
     }
@@ -37,30 +36,6 @@
       console.log("forgotpassword-success")
       $location.path('/sample');
     });
-    $scope.handleBtnClick = function() {
-      $auth.authenticate('google')
-    };
-    $scope.$on('auth:login-error', function(ev, reason) {
-      $scope.error = reason.errors[0];
-      console.log(reason)
-      console.log(ev)
-    });
-
-    $scope.$on('auth:login-success', function(ev, user) {
-      $scope.user = user;
-      console.log("sign in with github")
-      $location.path('/sample');
-    });
-    $scope.$on('auth:oauth-registration', function(ev, user) {
-      $scope.user = user;
-      console.log("completed the registertion")
-      $location.path('/sample');
-    });
-=======
-    console.log($scope.loginForm)
->>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
-
-
   }
 
 })();

@@ -33,7 +33,10 @@ DeviseTokenAuth.setup do |config|
   # By default we will use callbacks for single omniauth.
   # It depends on fields like email, provider and uid.
   # config.default_callbacks = true
+<<<<<<< HEAD
   require "omniauth-google-oauth2"
+=======
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
   config.default_confirm_success_url = "confirmed"
   # Makes it possible to change the headers names
   # config.headers_names = {:'access-token' => 'access-token',

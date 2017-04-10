@@ -22,7 +22,11 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
 body {
+<<<<<<< HEAD
   background: #060606;
+=======
+  background: #456;
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -30,8 +34,11 @@ body {
   width: 400px;
   margin: 16px auto;
   font-size: 16px;
+<<<<<<< HEAD
   margin-top: 100px;
   color: #fff;
+=======
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
 }
 
 /* Reset top and bottom margins from certain elements */
@@ -51,17 +58,29 @@ body {
 }
 
 .login-header {
+<<<<<<< HEAD
   background: #2a9fd6;
+=======
+  background: #28d;
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
   padding: 20px;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;
+<<<<<<< HEAD
   /*text-transform: uppercase;*/
+=======
+  text-transform: uppercase;
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
   color: #fff;
 }
 
 .login-container {
+<<<<<<< HEAD
   background: #333;
+=======
+  background: #ebebeb;
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
   padding: 12px;
 }
 
@@ -109,6 +128,7 @@ body {
 /* Buttons' focus effect */
 .login input[type="submit"]:focus {
   border-color: #05a;
+<<<<<<< HEAD
 }
 .login input[type="checkbox"]{
   margin-left: -160px;
@@ -122,4 +142,6 @@ p.forgot{
   cursor: pointer;
   margin-top: -45px;
   margin-left: 200px
+=======
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
 }

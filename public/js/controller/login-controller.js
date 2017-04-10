@@ -19,6 +19,7 @@
       $location.path('/sample');
     });
 
+<<<<<<< HEAD
     $scope.forgotPassword = function(){
       $location.path('/forgotpassword')
     }
@@ -55,6 +56,9 @@
       console.log("completed the registertion")
       $location.path('/sample');
     });
+=======
+    console.log($scope.loginForm)
+>>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
 
 
   }

@@ -11,10 +11,7 @@ gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.19.0'
 gem 'devise_token_auth'
 gem 'omniauth'
-<<<<<<< HEAD
 gem 'omniauth-google-oauth2', '~> 0.4.1'
-=======
->>>>>>> bc066787c10c1351e5b9204b9a637a7e8ffb30ac
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
 gem 'puma', '~> 3.0'

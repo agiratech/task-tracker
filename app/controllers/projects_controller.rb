@@ -1,6 +1,10 @@
 class ProjectsController < ApplicationController
+  before_action :authenticate_current_user
   def index
     @projects = Project.all
+    respond_to do |format|
+      format.json { render json: @projects }
+    end
   end
   
   def show
@@ -17,12 +21,14 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(project_params)
-    respond_to do |format|
-      if @project.save
-        format.json {render json: {status: :success, data: @project}}
-      else
-        format.json {render json: {status: :error, data: @project.errors}}
-      end
+    if @current_user.present? && @current_user.role_type == "admin"
+      respond_to do |format|
+          if @project.save
+            format.json {render json: {status: :success, data: @project}}
+          else
+            format.json {render json: {status: :error, data: @project.errors}}
+          end
+        end
     end
   end
 
@@ -42,13 +48,13 @@ class ProjectsController < ApplicationController
     respond_to do |format|
       if @project.destroy
         format.json {render json: {status: :delete}}
+      end
     end
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:name, :type, :start_date, :end_date, :hours, :is_billable)
+    params.require(:project).permit(:name, :project_type, :start_date, :end_date, :hours, :is_billable)
   end
-
 end

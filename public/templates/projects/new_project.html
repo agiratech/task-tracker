@@ -1,0 +1,58 @@
+<link rel="stylesheet" type="text/css" href="css/local.css">
+<link rel="stylesheet" type="text/css" href="css/project.css">
+
+<div id="wrapper">
+  <div class="container">
+    <h2 class="text-header">New Project</h2>
+    <form class="form-horizontal" ng-submit="saveProject()" >
+      <div class="form-group">
+        <label class="control-label col-md-2" for="email">Name*:</label>
+        <div class="col-md-5">
+          <input type="text" class="form-control" id="email" placeholder="Enter the Project name" ng-model="name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="pwd">Project Type:</label>
+        <div class="col-md-5" >
+        <select class="dropdown form-control " id="email" ng-model="project_type">
+          <option value="" selected>select your project type</option>
+          <option  ng-repeat="x in project_types" value="{{x}}" >{{x}}</option>
+        </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="email" >Hours:</label>
+        <div class="col-md-5">
+          <input type="number" class="form-control" id="email" ng-model="hours" >
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="email">Start Date:</label>
+        <div class="col-md-5">
+          <input type="date" class="form-control" id="email" placeholder="dd/mm/yyyy" ng-model="start_date">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-md-2" for="email">End Date:</label>
+        <div class="col-md-5">
+          <input type="date" class="form-control" id="email" placeholder="dd/mm/yyyy" ng-model="end_date">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2" for="email"> Is_billable?*:</label>
+        <div class="col-md-5">
+          <label class="switch">
+            <input type="checkbox" ng-model="is_billable">
+            <div class="slider round"></div>
+          </label>
+        </div>
+      </div>
+      <div class="form-group">        
+        <div class="col-md-offset-3 col-md-4">
+          <button type="submit" class="btn btn-primary" >Create Project</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

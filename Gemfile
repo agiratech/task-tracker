@@ -10,6 +10,7 @@ end
 gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.19.0'
 gem 'devise_token_auth'
+gem 'pry', '~>0.10.4'
 gem 'omniauth'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 # Use sqlite3 as the database for Active Record

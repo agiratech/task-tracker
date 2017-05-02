@@ -7,7 +7,7 @@ class CreateTimeEntries < ActiveRecord::Migration[5.0]
       t.float :hours
       t.boolean :is_billable, default: false
       t.belongs_to :employee, index: true
-      t.belongs_to :project, index: true    
+      t.belongs_to :project, index: true
       t.timestamps
     end
   end

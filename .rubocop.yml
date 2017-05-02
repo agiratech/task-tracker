@@ -1,0 +1,22 @@
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'vender/**/*'
+  TargetRubyVersion: 2.3
+Metrics/LineLength:
+  Exclude:
+    - 'config/**/*'
+    - 'test/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+  Exclude:
+    - 'config/application.rb'
+    - 'app/**/*'
+Metrics/LineLength:
+  Max: 180
+Metrics/AbcSize:
+  Max: 50
+Style/IndentationConsistency:
+  Enabled: false

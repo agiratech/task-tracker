@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+# frozen_string_literal = true
 class ProjectsController < ApplicationController
   before_action :authenticate_current_user
   def index
@@ -6,7 +8,7 @@ class ProjectsController < ApplicationController
       format.json { render json: @projects }
     end
   end
-  
+
   def show
     @project = Project.find(params[:id])
   end
@@ -14,47 +16,46 @@ class ProjectsController < ApplicationController
   def new
     @project = Project.new
   end
- 
+
   def edit
     @project = Project.find(params[:id])
   end
 
   def create
     @project = Project.new(project_params)
-    if @current_user.present? && @current_user.role_type == "admin"
+    return if @current_user.present? && @current_user.role_type == 'admin'
       respond_to do |format|
-          if @project.save
-            format.json {render json: {status: :success, data: @project}}
-          else
-            format.json {render json: {status: :error, data: @project.errors}}
-          end
+        if @project.save
+          format.json { render json: { status: :success, data: @project } }
+        else
+          format.json { render json: { status: :error, data: @project.errors } }
         end
-    end
+      end
   end
 
   def update
     @project = Project.find(params[:id])
     respond_to do |format|
       if @project.update(project_params)
-        format.json {render json: {status: :ok, data: @project}}
+        format.json { render json: { status: :ok, data: @project } }
       else
-        format.json {render json: {status: :error, data: @project.errors}}
+        format.json { render json: { status: :error, data: @project.errors } }
       end
     end
   end
-  
+
   def destroy
     @project = Project.find(params[:id])
     respond_to do |format|
-      if @project.destroy
-        format.json {render json: {status: :delete}}
-      end
+      format.json { render json: { status: :delete } } if @project.destroy
     end
   end
 
   private
 
-  def project_params
-    params.require(:project).permit(:name, :project_type, :start_date, :end_date, :hours, :is_billable)
-  end
+    def project_params
+      params.require(:project).permit(
+        :name, :project_type, :start_date, :end_date, :hours, :is_billable
+      )
+    end
 end

@@ -15,11 +15,13 @@
     <script type="text/javascript" src="js/ng-token-auth.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script src="js/controller/login-controller.js"></script>
+    <script src="js/controller/project-controller.js"></script>
     <script src="js/controller/logout-controller.js"></script>
   </head>
- <body ng-view>
-
-
+ <body>
+    <div ng-include="'templates/dashboard/default_dashboard.html'" ng-if="location.path() !== '/login'"></div>
+    <div ng-view>
+    </div>
 
  </body>
  </html>

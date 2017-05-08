@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-@employee=Employee.new(email: 'admin@agiratech.com', password: '12345678', password_confirmation: '12345678', is_admin: true, confirmed_at: DateTime.now
+@employee = Employee.new(email: 'admin@agiratech.com', password: '12345678', password_confirmation: '12345678', is_admin: true, role_type: 'admin', confirmed_at: DateTime.now
 )
 @client_id = SecureRandom.urlsafe_base64(nil, false)
 @token     = SecureRandom.urlsafe_base64(nil, false)
@@ -17,4 +17,5 @@
 }
 @employee.skip_confirmation!
 @employee.save!
+
 # EmployeeMailer.welcome_email(@employee).deliver_now

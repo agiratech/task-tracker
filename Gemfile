@@ -1,16 +1,19 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-git_source(:github) do |repo_name|
-  repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
-  "https://github.com/#{repo_name}.git"
-end
-
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.2'
-gem 'pg', '~> 0.19.0'
+
 gem 'devise_token_auth'
+
+gem 'pg', '~> 0.19.0'
+
+gem 'pry', '~>0.10.4'
+
+gem 'rails', '~> 5.0.2'
+
 gem 'omniauth'
+
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 # Use sqlite3 as the database for Active Record
 # Use Puma as the app server
@@ -44,17 +47,20 @@ group :development, :test do
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'bullet', '~> 5.5.1'
-  gem 'web-console', '>= 3.3.0'
-  gem 'listen', '~> 3.0.5'
-  gem 'rubycritic', '~> 3.1.3'
-  gem 'rubocop', '~> 0.46.0'
+  # Access an IRB console on exception pages or by using
+  # <%= console %> anywhere in the code.
   gem 'brakeman', '~>3.6.1', require: false
+  gem 'traceroute', '0.5.0'
+  gem 'bullet', '~> 5.5.1'
+  gem 'listen', '~> 3.0.5'
+  gem 'rails_best_practices', '1.18.0'
+  gem 'rubocop', '~> 0.46.0'
+  gem 'rubycritic', '~> 3.1.3'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'letter_opener', '~> 1.4.1'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'letter_opener', '~> 1.4.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

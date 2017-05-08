@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170405102255) do
+ActiveRecord::Schema.define(version: 20170425092750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170405102255) do
     t.json     "tokens"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.string   "role_type"
     t.index ["email"], name: "index_employees_on_email", using: :btree
     t.index ["reset_password_token"], name: "index_employees_on_reset_password_token", unique: true, using: :btree
     t.index ["uid", "provider"], name: "index_employees_on_uid_and_provider", unique: true, using: :btree
@@ -57,13 +58,13 @@ ActiveRecord::Schema.define(version: 20170405102255) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "project_type"
     t.date     "start_date"
     t.date     "end_date"
     t.float    "hours"
-    t.boolean  "is_billable", default: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "is_billable",  default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "roles", force: :cascade do |t|
